@@ -21,3 +21,12 @@ $ uvicorn main:app --reload
 To call your task, run `curl localhost:8000` in another terminal.
 
 `ctrl+c` will terminate the task.
+
+## Testing the Docker image
+
+We use Docker to package your code. To mimic how your task will run in production, run the following commands:
+
+```
+docker build -t python-template .
+docker run -p 80:80 python-template
+```
