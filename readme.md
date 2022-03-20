@@ -15,7 +15,7 @@ $ . ./venv/bin/activate
 
 $ pip3 install -r requirements.txt
 
-$ uvicorn main:app --reload
+$ uvicorn task:app --reload
 ```
 
 To call your task, run `curl localhost:8000` in another terminal.
@@ -27,6 +27,9 @@ To call your task, run `curl localhost:8000` in another terminal.
 We use Docker to package your code. To mimic how your task will run in production, run the following commands:
 
 ```
-docker build -t python-template .
-docker run -p 80:80 python-template
+$ docker build -t python-template .
+
+$ docker run -p 80:80 python-template
 ```
+
+To call your task, run `curl localhost` in another terminal.
