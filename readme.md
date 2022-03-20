@@ -29,7 +29,7 @@ We use Docker to package your code. To mimic how your task will run in productio
 ```
 $ docker build -t python-template .
 
-$ docker run -p 80:80 python-template
+$ docker run -p 8000:8000 -e PORT=8000 python-template
 ```
 
-To call your task, run `curl localhost` in another terminal.
+To call your task, run `curl localhost:8000` in another terminal.

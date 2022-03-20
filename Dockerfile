@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./task.py /code/task.py
 
-CMD ["uvicorn", "task:app", "--host", "0.0.0.0", "--port", "80"]
+ENV PORT 8080
+CMD exec uvicorn task:app --host 0.0.0.0 --port $PORT
